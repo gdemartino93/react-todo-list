@@ -16,7 +16,15 @@ const AppMain = () => {
         }
         let newToDo = toDo.concat(newThingObj);
         setToDo(newToDo)
-    }
+        document.getElementById("addNew").value = "";
+    };
+    const handleKeyPress = (event) => {
+        // Se il tasto premuto è il tasto Invio (codice ASCII 13)
+        if (event.key === 'Enter') {
+          // Esegui la tua logica qui
+          addThing();
+        }
+      }
   return (
     <div className='col-3'>
         {
@@ -28,7 +36,7 @@ const AppMain = () => {
             })
         }
         <div className='d-flex justify-content-center gap-4'>
-            <input type="text" className='col-8' placeholder='Inserisci nuova cosa da fare' id='addNew'></input>
+            <input type="text" className='col-8' placeholder='Inserisci nuova cosa da fare' id='addNew' onKeyDown={handleKeyPress}></input>
             <button className='btn btn-primary col-3' onClick={addThing}>Add new</button>
         </div>
     </div>
