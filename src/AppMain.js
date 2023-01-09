@@ -10,13 +10,17 @@ const AppMain = () => {
     };
     const addThing = () =>{
         let newThing = document.getElementById("addNew").value;
-        let newThingObj = {
-            id : toDo.length + 1 ,
-            "name" : newThing
+        if ( newThing !== ""){
+            let newThingObj = {
+                id : toDo.length + 1 ,
+                "name" : newThing
+            }
+            let newToDo = toDo.concat(newThingObj);
+            setToDo(newToDo)
+            document.getElementById("addNew").value = "";
+        }else{
+
         }
-        let newToDo = toDo.concat(newThingObj);
-        setToDo(newToDo)
-        document.getElementById("addNew").value = "";
     };
     const handleKeyPress = (event) => {
         // Se il tasto premuto è il tasto Invio (codice ASCII 13)
