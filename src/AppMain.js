@@ -7,18 +7,31 @@ const AppMain = () => {
     const removeThing = (clicked) =>{
         let removeToDo = toDo.filter( thing => thing.id !== clicked);
         setToDo(removeToDo)
+    };
+    const addThing = () =>{
+        let newThing = document.getElementById("addNew").value;
+        let newThingObj = {
+            id : toDo.length + 1 ,
+            "name" : newThing
+        }
+        let newToDo = toDo.concat(newThingObj);
+        setToDo(newToDo)
     }
   return (
-    <section>
+    <div className='col-3'>
         {
             toDo.map( thing =>{
-               return <div key={thing.id}  className="thing" >
+               return <div key={thing.id}  className="thing col-12" >
                 <span>{thing.name}</span>
-                <button onClick={()=> removeThing(thing.id)}>X</button>
+                <button className='btn btn-danger' onClick={()=> removeThing(thing.id)}>X</button>
                 </div>
             })
         }
-    </section>
+        <div className='d-flex justify-content-center gap-4'>
+            <input type="text" className='col-8' placeholder='Inserisci nuova cosa da fare' id='addNew'></input>
+            <button className='btn btn-primary col-3' onClick={addThing}>Add new</button>
+        </div>
+    </div>
   )
 }
 
