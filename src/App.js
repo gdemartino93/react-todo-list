@@ -1,11 +1,15 @@
+import AppHeader from "./AppHeader";
+import AppMain from "./AppMain";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1> </h1>
-        
+      <header>
+        <AppHeader />
       </header>
+      <main>
+        <AppMain />
+      </main>
     </div>
   );
 }

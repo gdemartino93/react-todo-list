@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { toDoArray } from './data';
 
-const Thing = () => {
+const Thing = ({id,name,children}) => {
   return (
-    <div>Thing</div>
+    <div className='thing'>
+        <span>{id} - {name}</span>
+    </div>
   )
 }
 
