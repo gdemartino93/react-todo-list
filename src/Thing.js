@@ -1,10 +1,10 @@
 import React from 'react';
 import { toDoArray } from './data';
 
-const Thing = ({id,name,children}) => {
+const Thing = ({id,name}) => {
   return (
     <div className='thing'>
-        <span>{id} - {name}</span>
+        <span className='text'>{id} - {name}</span>
     </div>
   )
 }
