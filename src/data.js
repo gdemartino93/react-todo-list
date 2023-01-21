@@ -1,5 +1,5 @@
 export const toDoArray = [
-    { id: 1, name: "fare la spesa" },
-    { id: 2, name: "andare in palestra" }
+    { id: 1, name: "Fare la grafica" },
+    { id: 2, name: "Rifare la grafica :D" }
   ];
   
